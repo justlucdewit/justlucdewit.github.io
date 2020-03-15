@@ -4,7 +4,7 @@
             <li class="logo">
                 <a href="#" class="nav-link">
                     <span class="link-text logo-text">Luc de Wit</span>
-                    <img src="@/assets/navbaritems/arrow.png" class="nav-icon arrow">
+                    <img src="@/assets/navbaritems/arrow.png" class="nav-icon arrow" :class="{active: (activatedIndex==0)}">
                 </a>
             </li>
             <li class="nav-item">
@@ -43,7 +43,11 @@
 
 <script>
 export default {
-    
+    data: function(){
+        return{
+            activatedIndex: 0
+        };
+    }
 }
 </script>
 
@@ -99,13 +103,13 @@ $transition-delay: .5s;
 .nav-icon{
     display: block;
     margin: 0 1.5rem;
-    filter: grayscale(100%) brightness(800%) opacity(.5);
+    filter: grayscale(100%) brightness(400%) opacity(.5);
     transition: $transition-delay;
 }
 
 .nav-link:hover{
     .link-text{
-        color: blue;
+        color: rgb(140, 0, 255);
     }
     background: $bg-secondary;
     .nav-icon{
@@ -113,7 +117,7 @@ $transition-delay: .5s;
     }
 
     .logo-text{
-        color: #aaa;
+        color: #727272;
     }
 
     .arrow{
@@ -196,6 +200,15 @@ $transition-delay: .5s;
     .nav-icon{
         width: 1.5rem;
         height: 1.5rem;
+    }
+}
+
+.router-link-active{
+   .link-text{
+        color: rgb(140, 0, 255);
+    }
+    .nav-icon{
+        filter: grayscale(0%) brightness(100%) opacity(1);
     }
 }
 </style>

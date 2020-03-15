@@ -7,6 +7,8 @@
 
 <script>
 import Navbar from '@/components/navbar.vue'
+
+document.title = "Luc de Wit";
 export default {
   components:{Navbar}
 }

@@ -303,9 +303,8 @@ export default {
     }
 
     .tech-list{
-        margin-left: 7rem;
-        margin-right: 2rem;
         display: grid;
+        justify-items: center;
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     }
 
@@ -332,7 +331,6 @@ export default {
 
     @media only screen and (max-width: 600px){/*mobile mode*/
         .tech-list{
-            margin-left: 2rem;
             justify-items: center;
         }
     }
