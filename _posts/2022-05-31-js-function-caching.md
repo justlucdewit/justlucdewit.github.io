@@ -6,11 +6,11 @@ tags: [web,javascript,tips n tricks]
 ---
 
 # Why use caching
-If you want to up the preformance of your web application, and stop wasting resources for unneeded actions, you might want to look at caching the results of your javascript functions, especially in the case of functions that make API calls. Depending on what exactly you want, there are multiple ways to handle this.
+If you want to up the performance of your web application, and stop wasting resources on unneeded actions, you might want to look at caching the results of your javascript functions, especially in the case of functions that make API calls. Depending on what exactly you want, there are multiple ways to handle this.
 
-However, each way has its own up and downsides, thats why I wanted to compile these techniques in an article about caching the results of your javascript functions.
+However, each way has it is own up and downsides, that's why I wanted to compile these techniques in an article about caching the results of your javascript functions.
 
-Lets say you have some function `sumOf1Bil` that calculates the sum of the numbers 0 trough 1 billion, that function might be implemented as something like this:
+Let's say you have some function `sumOf1Bil` that calculates the sum of the numbers 0 through 1 billion, that function might be implemented as something like this:
 
 ```javascript
 const sumOf1Bil = () => {
@@ -23,16 +23,16 @@ const sumOf1Bil = () => {
 }
 ```
 
-Here I simply used a for loop to count from 1 to 1 billion, and add all those numbers to a an accumulator one by one. On my browser this takes roughly 4 seconds to calculate, which in some cases could be acceptable, but would be very performance heavy when put in a loop.
+Here I simply used a for loop to count from 1 to 1 billion, and add all those numbers to an accumulator one by one. On my browser, this takes roughly 4 seconds to calculate, which in some cases could be acceptable, but would be very performance heavy when put in a loop.
 
-If we know that a function is going to be executed multiple times, and will have a big impact on performance, then its a good idea to consider caching the result of the function.
+If we know that a function is going to be executed multiple times, and will have a big impact on performance, then it would be a good idea to consider caching the result of the function.
 
 # Short term caching
-Caching can be implemented multiple ways, first we will take a look at short term caching, this will remember the result of the function when called multiple times, but as soon as you leave the site or refresh the tab, the cache will be lost as it was cached in the global javascript state.
+Caching can be implemented in multiple ways, first, we will take a look at short term caching, this will remember the result of the function when called multiple times, but as soon as you leave the site or refresh the tab, the cache will be lost as it was cached in the global javascript state.
 
-We will implement this caching by having a key value dictionary (AKA a good old javascript object) living in the window state, then we will write a `cachify` function that takes a normal function and returns a new function that uses caching.
+We will implement this caching by having a key-value dictionary (AKA a good old javascript object) living in the window state, then we will write a `cachify` function that takes a normal function and returns a new function that uses caching.
 
-The function should also get a key which identifies what piece of cache belongs to
+The function should also get a key that identifies what piece of cache belongs to
 the result of this function.
 
 ```javascript
@@ -58,11 +58,11 @@ const cachify = (key, oldFunc) => {
 }
 ```
 
-As you can see, cachify takes the old function together with a key, and returns a new function, which is basically a wrapper around `oldFunc`. When called, it will peek into the global cache dictionary and return the cached result if its in there.
+As you can see, cachify takes the old function together with a key and returns a new function, which is basically a wrapper around `oldFunc`. When called, it will peek into the global cache dictionary and return the cached result if it's in there.
 
-If its not found, it will execute `oldFunc`, and use that result to put into the cache, and then return the result. This means the behaviour of the `oldFunc` will stay the exact same while whilst caching the result and thus being way quicker.
+If it's not found, it will execute `oldFunc`, use that result to put it into the cache, and then return the result. This means the behavior of the `oldFunc` will stay the exact same whilst caching the result and thus being way quicker.
 
-Lets implement this new cachify function on our old `sumOf1Bil` function:
+Let's implement this new cachify function on our old `sumOf1Bil` function:
 
 ```javascript
 const sumOf1Bil = cachify('sumOf1Bil', () => {
@@ -75,16 +75,16 @@ const sumOf1Bil = cachify('sumOf1Bil', () => {
 });
 ```
 
-Now when we call `sumOf1Bil()` it will at first take the same 4 seconds to run (the result isnt put in cache yet), but when we run it again, it will be able to retrieve the result out of cache meaning it finishes running instantly.
+Now when we call `sumOf1Bil()` it will at first take the same 4 seconds to run (the result is not put in cache yet), but when we run it again, it will be able to retrieve the result out of the cache meaning it finishes running instantly.
 
 # Using a hash function to eliminate the key string
-Right now the cachify function needs a key string as first argument to store the result in cache. This is unneeded code, and can be pretty dangerous in big code bases when you accidently create conflicting keynames.
+Right now the cachify function needs a key string as the first argument to store the result in the cache. This is unneeded code and can be pretty dangerous in big codebases when you accidentally create conflicting key names.
 
-There is a way to eliminate the usage of these keys, by converting the `oldFunc` to a string, and running a hash function on it. A hash function is a function that takes a parameter (like a string), and based on that value returns a seemingly random integer, this integer will always be the same if the input string is the same.
+There is a way to eliminate the usage of these keys, by converting the `oldFunc` to a string and running a hash function on it. A hash function is a function that takes a parameter (like a string), and based on that value returns a seemingly random integer, this integer will always be the same if the input string is the same.
 
-Javascript does not really have a good buildt in way of hashing a string, however we can ~~steal~~ copy/paste a very simple hashing algorythm from stack overflow [here](https://stackoverflow.com/a/65239086/11804669).
+Javascript does not really have a good build in way of hashing a string, however, we can ~~steal~~ copy/paste a very simple hashing algorithm from stack overflow [here](https://stackoverflow.com/a/65239086/11804669).
 
-In javascript you can convert a function to a string by putting that function into the `String()` constructor. When passing that string into the hashing function, we can get an integer which we can then use as the key into the cache dictionary.
+In Javascript, you can convert a function to a string by putting that function into the `String()` constructor. When passing that string into the hashing function, we can get an integer which we can then use as the key to the cache dictionary.
 
 ```javascript
 // Global cache
@@ -122,7 +122,7 @@ const cachify = oldFunc => {
 }
 ```
 
-Simply by adding that one line, we can eliminate the use for the key parameter. Now we can simply use `cachify` like this:
+Simply by adding that one line, we can eliminate the use of the key parameter. Now we can simply use `cachify` like this:
 
 ```javascript
 const sumOf1Bil = cachify(() => {
@@ -135,12 +135,12 @@ const sumOf1Bil = cachify(() => {
 });
 ```
 
-This will have the exact same behaviour as before, but with less chance of key conflicts.
+This will have the exact same behavior as before, but with less chance of key conflicts.
 
 # What about function arguments
-One problem that could arraise when working with the `cachify` function is that it assumes that the function will **always** return the exact same value, however often a function returns a different value depending on what arguments were given.
+One problem that could arise when working with the `cachify` function is that it assumes that the function will **always** return the exact same value, however often a function returns a different value depending on what arguments were given.
 
-a simple naive solution to this issue is concatinating the function arguments to the cache key, seperated by commas, this could be implemented like this:
+a simple naive solution to this issue is concatenating the function arguments to the cache key, separated by commas, this could be implemented like this:
 
 ```javascript
 // Function that takes a function and returns
@@ -181,12 +181,12 @@ const sumOf1Bil = cachify((n) => {
 });
 ```
 
-This solution will not always work tho, because sometimes different arguments can result into the same key, causing a key conflict, and the function will return a wrong result. For example, `f(12,34)` will result into '12,34' but `f('12,34')` will result into the same string. Be very cautious of this because if you get into this situation it will be **very** hard to debug.
+This solution will not always work though, because sometimes different arguments can result in the same key, causing a key conflict, and the function will return a wrong result. For example, `f(12,34)` will result into '12,34' but `f('12,34')` will result into the same string. Be very cautious of this because if you get into this situation it will be **very** hard to debug.
 
 # Long term caching
-Another possible problem with our current `cachify` function is that it clears the entire cache as soon as you exit the webpage or refresh, this can be avoided using localstorage, which will stay forever, or at least until the user explicitly chooses to clear the local storage of the website.
+Another possible problem with our current `cachify` function is that it clears the entire cache as soon as you exit the webpage or refresh, this can be avoided using local storage, which will stay forever, or at least until the user explicitly chooses to clear the local storage of the website.
 
-localstorage can be read and written to by javascript, using the functions `localstorage.getItem(key)` and `localstorage.setItem(key, value)`. To implement this functionality in our cachify function, you might want to do something like this:
+local storage can be read and written to by javascript, using the functions `localstorage.getItem(key)` and `localstorage.setItem(key, value)`. To implement this functionality in our cachify function, you might want to do something like this:
 
 ```javascript
 // Function that takes a function and returns
@@ -215,4 +215,4 @@ const cachify = oldFunc => {
 ```
 
 # Conclusion
-I hope you could get some value out of this article, and most importantly learned about my techniques for handling front-end caching. Its most important that you understand how each method works, and when what method is most relevant.
+I hope you could get some value out of this article, and most importantly learned about my techniques for handling front-end caching. It is most important that you understand how each method works, when, and what method is most relevant.

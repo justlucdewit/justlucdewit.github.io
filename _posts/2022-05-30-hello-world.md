@@ -8,14 +8,14 @@ tags: [portfolio,web]
 # Hello World
 Hello world and welcome to my new portfolio and blogging website!
 
-This is the first blog post on my new and improved devblog. this website is going to be used to document my programming carreer, my thoughts, and will be used as my new portfolio website
+This is the first blog post on my new and improved devblog. this website is going to be used to document my programming career, my thoughts, and will be used as my new portfolio website
 
-Before i started with this project, I was working on a different portfolio/blogging site using VueJS, However I was not really happy with the design and the mobile compatibility, and overall it was a pain in the ass to use and maintain
+Before I started with this project, I was working on a different portfolio/blogging site using VueJS, However, I was not happy with the design and the mobile compatibility, and overall it was a pain in the ass to use and maintain
 
 ## Jekyll
-Due to that I decided to checkout Jekyll, a static site generator made in ruby. This let me use a pre existing jekyll template, instead of designing and creating everything from scratch.
+Due to that, I decided to checkout Jekyll, a static site generator made in ruby. Jekyll let me use a pre-existing Jekyll template, instead of designing and creating everything from scratch.
 
-My first impressions of jekyll were pretty bad due to me having trouble setting up ruby and its package manager (bundle) on windows, but after switching over to WSL ubuntu, i finally got it working!
+My first impressions of Jekyll were pretty bad due to me having trouble setting up ruby and its package manager (bundle) on windows, but after switching over to WSL Ubuntu, I finally got it working!
 
 Once I got it working it was really easy and nice to work with. The blog posts are all written using simple markdown files and the config of the site is all inside of a single _config.yml file that looks a bit like this:
 
@@ -54,4 +54,4 @@ toc: true
 ## Now what
 Now that I have got this blogging site up and running, my next goal is to change this template so that it also supports my portfolio stuff like my projects, my resume, and a nice introductory homepage
 
-In the meanwhile I will also work a lot on my other projects like RMS (a CMS focussed on webshops that i am working on) and ideas for nice blog posts
+In the meanwhile, I will also work a lot on my other projects like RMS (a CMS focused on webshops that I am working on) and ideas for nice blog posts
