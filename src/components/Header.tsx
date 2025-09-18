@@ -11,8 +11,16 @@ export function Header() {
 				</h2>
 
 				<nav>
-					<a href="/" class={url == '/' && 'active'}>
+					<a href="#/home" class={url == '/' && 'active'}>
 						Home
+					</a>
+
+					{/* <a href="#/activity" class={url == '/' && 'active'}>
+						Activity
+					</a> */}
+
+					<a href="#/resume" class={url == '/' && 'active'}>
+						Resume
 					</a>
 				</nav>
 			</section>

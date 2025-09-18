@@ -49,7 +49,7 @@ export function Footer() {
                 </div>
 
                 <div id="footer-text">
-                    Website created and owned by Luc de Wit - 2025
+                    Luke's personal website
                 </div>
             </section>
         </footer>
