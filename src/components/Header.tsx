@@ -28,13 +28,13 @@ export function Header() {
 										Speedcubing
 									</a>
 
-									<a href="#/activity/dreaming" class={url == '/' && 'active'}>
+									{/* <a href="#/activity/dreaming" class={url == '/' && 'active'}>
 										Dreaming
-									</a>
+									</a> */}
 
-									<a href="#/activity/programming" class={url == '/' && 'active'}>
+									{/* <a href="#/activity/programming" class={url == '/' && 'active'}>
 										Programming
-									</a>
+									</a> */}
 								</div>
 							)
 						}
