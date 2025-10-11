@@ -11,6 +11,8 @@ import { Home } from './pages/home';
 import { Resume } from './pages/resume';
 import { NotFound } from './pages/_404.js';
 
+import { Speedcubing } from "./pages/activities/speedcubing.js";
+
 import './style.css';
 
 // Custom hook for hash-based routing
@@ -57,8 +59,9 @@ export function App() {
 
 		<main>
     		<Route path="/home" component={Home} />
-			<Route path="/" component={Home} />
-			<Route path="/resume" component={Resume} />
+        <Route path="/" component={Home} />
+        <Route path="/resume" component={Resume} />
+        <Route path="/activity/speedcubing" component={Speedcubing} />
 		</main>
 
 		<Footer />

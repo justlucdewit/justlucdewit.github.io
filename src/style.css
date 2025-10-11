@@ -96,7 +96,7 @@ header, footer, main {
 nav {
 	-webkit-user-select: none;
     user-select: none;
-	
+
 	a {
 		color: white;
 		margin-left: 20px;
@@ -153,4 +153,29 @@ nav {
 .col-2 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+}
+
+table {
+	width: max-content;
+	max-width: 100%;
+
+	thead th {
+		text-align: left;
+	}
+
+	th, td {
+		padding-right: 20px;
+	}
+
+	.green-solve {
+		color: #1ce164;
+	}
+
+	.gray-solve {
+		color: #aaaaaa;
+	}
+
+	.red-solve {
+		color: rgb(236, 104, 104);
+	}
 }
