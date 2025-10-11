@@ -94,13 +94,29 @@ header, footer, main {
 } */
 
 nav {
+	-webkit-user-select: none;
+    user-select: none;
+	
 	a {
 		color: white;
 		margin-left: 20px;
 		text-decoration: none;
+		position: relative;
 
 		&:hover {
 			opacity: .8;
+		}
+
+		.sub-menu {
+			position: absolute;
+			display: block;
+			background: rgb(31, 31, 31);
+			transform: translateY(20px);
+
+			a {
+				display: block;
+				margin-left: 0;
+			}
 		}
 	}
 }
