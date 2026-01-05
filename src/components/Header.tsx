@@ -32,9 +32,9 @@ export function Header() {
 										Dreaming
 									</a> */}
 
-									{/* <a href="#/activity/programming" class={url == '/' && 'active'}>
+									<a href="#/activity/programming" class={url == '/' && 'active'}>
 										Programming
-									</a> */}
+									</a>
 								</div>
 							)
 						}

@@ -179,3 +179,33 @@ table {
 		color: rgb(236, 104, 104);
 	}
 }
+
+#article-list {
+	list-style: none;
+	padding: 0;
+
+	li {
+		margin-bottom: 10px;
+		
+		a {
+			text-decoration: none;
+			color: #ddd;
+
+			&:hover {
+				color: #FFF;
+			}
+		}
+	}
+}
+
+article {
+	a, p, h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+	}
+}

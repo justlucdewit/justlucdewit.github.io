@@ -12,6 +12,8 @@ import { Resume } from './pages/resume';
 import { NotFound } from './pages/_404.js';
 
 import { Speedcubing } from "./pages/activities/speedcubing.js";
+import { Programming } from "./pages/activities/programming/programming.js";
+import { Article } from "./pages/activities/programming/article.js";
 
 import './style.css';
 
@@ -62,6 +64,8 @@ export function App() {
         <Route path="/" component={Home} />
         <Route path="/resume" component={Resume} />
         <Route path="/activity/speedcubing" component={Speedcubing} />
+        <Route path="/activity/programming" component={Programming} />
+        <Route path="/activity/programming/:name" component={Article} />
 		</main>
 
 		<Footer />
