@@ -1,11 +1,38 @@
-## Hi there 👋 I am Luc de Wit/Luke_
-I am a software developer passionate about learning new languages and skills that seem challenging to me. I have near 4 years of professional experience but have been programming as a hobby passionately since 2010 (so for 15 years now). The languages I love the most are VueJS, Python, Bash, and Php.
+# .
 
-I currently work as a full stack developer, making websites and demos for big international companies like Nokia, Royal Canine, Philips and MARS at an advertisement agency in the Netherlands.
+This template should help get you started developing with Vue 3 in Vite.
 
-- 🔭 I’m currently working on **My personal bash scripting library**
-- 🌱 I’m currently learning **More advanced Bash scripting**
-- 💬 Ask me about **Music or Speedcubing**
-- 📫 How to reach me: **luc.dewit@hotmail.nl**
-- 😄 Pronouns: **He/Him**
-- ⚡ Fun fact: **Ive been making music as a drummer since I was 8**
+## Recommended IDE Setup
+
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Recommended Browser Setup
+
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
